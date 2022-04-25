@@ -1,0 +1,44 @@
+import random
+choices = ["rock", "paper", "scissor"]
+computer = random.choice(choices)
+username = input("What is your name?")
+rematch = True
+print("Hello " + username)
+print("Let's get started!!!")
+while rematch == True:
+    decision = input("Rock Paper Scissor!!!").lower()
+    while decision not in choices:
+        decision = input("Rock Paper Scissor!!!").lower()
+    else:
+        print("You: " + decision)
+        print("Computer: " + computer)
+
+    #@decision making
+    if decision == computer:
+        print("It is tied!")
+    elif decision == "rock":
+        if computer == "scissor":
+            print("You Win !!!")
+        else:
+            print("You Lose !!!")
+        
+    elif decision == "scissor":
+        if computer == "paper":
+            print("You Win !!!")
+        else:
+            print("You Lose !!!")
+
+    elif decision == "paper":
+        if computer == "rock":
+            print("You Win !!!")
+        else:
+            print("You Lose !!!")
+        
+    rematch = input("Wanna rematch? Y/N").upper()
+    if rematch == "Y" or "N":
+        if rematch == "Y":
+            rematch = True
+        elif rematch == "N":
+            rematch = False
+    else:
+        rematch = input("Wanna rematch? Y/N").upper()
