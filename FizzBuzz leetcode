@@ -1,0 +1,21 @@
+class Solution:
+    def fizzBuzz(self, n: int) -> List[str]:
+        strlist = []
+        mult3 = 3
+        mult5 = 5
+        mult15 = 15
+        for i in range(1, n+1):
+            if i == mult15:
+                strlist.append("FizzBuzz")
+                mult3 = mult15 + 3
+                mult5 = mult15 + 5
+                mult15 += 15
+            elif i == mult3:
+                strlist.append("Fizz")
+                mult3 += 3
+            elif i == mult5:
+                strlist.append("Buzz")
+                mult5 += 5
+            else:
+                strlist.append(str(i))
+        return strlist
